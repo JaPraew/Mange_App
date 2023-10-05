@@ -64,38 +64,25 @@ class Webservice {
             throw NetworkError.badUrl
         }
         
-        let requestBody : [String: Any] = [
-            "namelocation": placeRequest.namelocation,
-            "imagebase64": placeRequest.imagebase64,
-            "imagename": placeRequest.imagename,
-            "owner": placeRequest.owner
-        ]
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = try JSONEncoder().encode(placeRequest)
         
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: .prettyPrinted)
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.httpBody = jsonData
-            
-            let (data,response) = try await URLSession.shared.data(for: request)
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                throw NetworkError.badRequest
-            }
-            
-            guard let places = try? JSONDecoder().decode(Place.self, from: data) else {
-                throw NetworkError.decodingError
-            }
-            
-            return places
-        } catch {
-            print("ERROR YOOYYOYOYO \(error)")
+        let (data,response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkError.badRequest
         }
-        return Place(id: 0, _id: "", imagelocation: "", namelocation: "")
+        
+        guard let places = try? JSONDecoder().decode(Place.self, from: data) else {
+            throw NetworkError.decodingError
+        }
+        
+        return places
+        
     }
     
     func updatePlace(placeRequest: PlaceRequest) async throws -> Place  {

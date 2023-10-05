@@ -162,8 +162,7 @@ struct LocationDetailView: View {
                             }
                         }
                     }.task {
-                        let ownerId = userDefaults.string(forKey: "Owner") ?? ""
-                        await populateItem(ownerId: ownerId, locationID: place._id)
+                        await populateItem(ownerId: place.owner, locationID: place._id)
                     }
                     
                 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct ConstantData {
-    static let baseUrl: String = "http://localhost:3001"
+    static let baseUrl: String = "http://172.20.10.3:3001"
 }
