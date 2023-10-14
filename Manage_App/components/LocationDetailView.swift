@@ -69,15 +69,16 @@ struct LocationDetailView: View {
                         ZStack {
                             // Asynchronously load and display the image from the URL
                             if image == nil {
-                                AsyncImage(url: URL(string: place.imagelocation)) { image in
+                                AsyncImageHack(url: URL(string: place.imagelocation)) { view in
                                     
-                                    image
+                                    view.image?
                                         .resizable() // Apply the `resizable()` modifier here
                                        .frame(width: 150, height: 150)
                                        .aspectRatio(contentMode: .fit)
-                                } placeholder: {
-                                    ProgressView()
-                                }
+                               }
+  //                              placeholder: {
+//                                    ProgressView()
+//                                }
                             } else {
                                 image!
                                     .resizable() // Apply the `resizable()` modifier here
@@ -127,16 +128,16 @@ struct LocationDetailView: View {
                                 ForEach(model.items, id: \.self) { item in
                                     NavigationLink(destination: ItemDetailView(itemDetail: item)) {
                                         HStack {
-                                            AsyncImage(url: URL(string: item.imageitem ?? "")) { image in
-                                                image
+                                            AsyncImageHack(url: URL(string: item.imageitem ?? "")) { view in
+                                                view.image?
                                                     .resizable()
                                                     .scaledToFill()
                                                     .frame(width: 100, height: 80)
                                                     .cornerRadius(10)
                                             }
-                                        placeholder: {
-                                            ProgressView()
-                                        }
+//                                        placeholder: {
+//                                            ProgressView()
+//                                        }
                                             Text(item.nameItem ?? "")
                                                 .bold()
                                                 .frame(maxWidth: .infinity)

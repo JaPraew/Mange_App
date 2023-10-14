@@ -1,8 +1,4 @@
-//
-//  Home.swift
-//  Manage_App
-//
-//  Created by Pare on 28/3/2566 BE.
+
 
 import SwiftUI
 

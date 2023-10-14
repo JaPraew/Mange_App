@@ -15,7 +15,7 @@ struct ItemView: View {
     @EnvironmentObject private var model: PlaceModel
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var image: Image? = Image("karthick")
+    @State private var image: Image? = Image("roomempty")
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false

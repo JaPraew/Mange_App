@@ -23,7 +23,14 @@ struct ItemDetailView: View {
     @State var newDescription = ""
     
     private func updateItem(imageBase64: String) async {
+        
         do {
+            if(newTitle.isEmpty ){
+                newTitle = itemDetail.nameItem ?? ""
+            }
+            if(newDescription.isEmpty ){
+                newDescription = itemDetail.descriptionItem ?? ""
+            }
             try await model.updateItem(itemRequest: ItemRequest(nameItem: newTitle, imagebase64: imageBase64, imagename: newTitle, descriptionItem: newDescription, idlocation: itemDetail.idlocation ?? "", owner: itemDetail.owner ?? ""), itemID: itemDetail._id)
             
             presentationMode.wrappedValue.dismiss()
@@ -57,7 +64,7 @@ struct ItemDetailView: View {
                                 .padding(.bottom, 60)
                         } else {
                             
-                        AsyncImage(url: URL(string: itemDetail.imageitem ?? "" )) { image in
+                            AsyncImage(url: URL(string: itemDetail.imageitem ?? "" )) { image in
                             image
                                 .resizable() // Apply the `resizable()` modifier here
                                 .frame(width: 300, height: 300)

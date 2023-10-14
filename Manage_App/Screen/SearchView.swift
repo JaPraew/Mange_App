@@ -38,7 +38,7 @@ struct SearchView: View {
                         LazyVStack {
                             if model.search.locationList.count > 0 {
                                     HStack {
-                                        Text("ห้อง")
+                                        Text("Place")
                                             .font(.largeTitle)
                                         Spacer()
                                         Spacer()
@@ -71,19 +71,19 @@ struct SearchView: View {
                             } else {
                                if searchText != "" {
                                    HStack {
-                                       Text("ห้อง")
+                                       Text("Place")
                                            .font(.largeTitle)
                                        Spacer()
                                        Spacer()
                                    }.padding(.horizontal, 4)
-                                   Text("ไม่พบห้อง \(self.searchText) ")
+                                   Text("No Place \(self.searchText) ")
                                }
                            }
                         }
                         LazyVStack {
                             if model.search.itemList.count > 0 {
                                     HStack {
-                                        Text("ของใช้")
+                                        Text("Item")
                                             .font(.largeTitle)
                                         Spacer()
                                     }.padding(.horizontal, 4)
@@ -116,11 +116,11 @@ struct SearchView: View {
                             } else {
                                 if searchText != "" {
                                     HStack {
-                                        Text("ของใช้")
+                                        Text("Item")
                                             .font(.largeTitle)
                                         Spacer()
                                     }.padding(.horizontal, 4)
-                                    Text("ไม่พบของใช้ \(self.searchText)")
+                                    Text("No Item \(self.searchText)")
                                 }
                             }
                         }

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RootView: View {
-    
+    //ถ้ามีการเปลี่ยนแปลงค่าจะมีการวนมาเช็คเสมอ state
     @State private var showSignInView: Bool = false
     
     var body: some View {
         ZStack{
             if !showSignInView{
                 NavigationStack{
-                    AppTabBarView()
+                    AppTabBarView(showSignInView: $showSignInView)
                   
                 }
             } else {

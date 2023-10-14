@@ -11,8 +11,8 @@ struct AppTabBarView: View {
     
     @State private var selection: String = "home"
     @State private var tabSelection: TabBarItem = .home
-    @State private var showSignInView: Bool = false
-   // @State private var showSignInView: Bool = false
+    @Binding  var showSignInView: Bool 
+   
     
 
     var body: some View {
@@ -20,7 +20,6 @@ struct AppTabBarView: View {
         TabBarContainerView(selection: $tabSelection){
           
             PlaceView()
-               // Color.blue
               .tabBarItem(tab: .home, selection: $tabSelection)
             
             
@@ -33,7 +32,7 @@ struct AppTabBarView: View {
             
               
             SettingsView(showSignInView: $showSignInView)
-          //  Text("Setting")
+          
               .tabBarItem(tab: .setting, selection: $tabSelection)
            
             
@@ -42,9 +41,9 @@ struct AppTabBarView: View {
 }
 
 struct AppTabBarView_Previews: PreviewProvider {
-    
+  
     static var previews: some View {
-        AppTabBarView()
+        AppTabBarView(showSignInView: .constant(false))
     }
 }
 

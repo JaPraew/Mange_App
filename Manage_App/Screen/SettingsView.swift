@@ -40,12 +40,7 @@ struct SettingsView: View {
             List{
               
                 
-                //.font(.title3)
-               // .foregroundColor(.blue)
-              //  .padding()
-              //  .background(Color.white)
-               // .cornerRadius(20)
-                
+            
            
                 Button("Log out"){
                     Task{
@@ -59,7 +54,7 @@ struct SettingsView: View {
                         }
                     }
                 }
-                //
+                
                 
             }
             
@@ -69,14 +64,7 @@ struct SettingsView: View {
         .onAppear{
             viewModel.loadAuthProviders()
         }
-        .fullScreenCover(isPresented: $showSignInView){
-            NavigationStack{
-                AuthenticationView(showSignInViwe: $showSignInView) {
-                    model.onLogin = true
-                }
-            }
-            
-        }
+      
     }
 }
 
@@ -91,6 +79,3 @@ struct SettingsView_Previews: PreviewProvider {
     }
 }
 
-//extension SettingsView{
-    
-//}

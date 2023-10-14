@@ -95,6 +95,7 @@ struct AuthenticationView: View {
   //  @Binding var showSignInView: Bool
     @StateObject private var viewModel = AuthenticationViewModel()
     @Binding var showSignInViwe: Bool
+    
     var onLogin: () -> Void
     var body: some View {
         

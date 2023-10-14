@@ -41,6 +41,7 @@
 		49A6DC3629DCAAC000916F7C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6DC3529DCAAC000916F7C /* Utilities.swift */; };
 		49A6DC3829DCB06200916F7C /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6DC3729DCB06200916F7C /* AuthenticationManager.swift */; };
 		49AB73DC2A5B6288003CD556 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 49AB73DB2A5B6288003CD556 /* Alamofire */; };
+		49B648482ADB112F0036491D /* AsyncImageHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B648472ADB112F0036491D /* AsyncImageHack.swift */; };
 		49DAE25F2AADDA700032A51A /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAE25E2AADDA700032A51A /* Webservice.swift */; };
 		49DAE2612AADDB0B0032A51A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAE2602AADDB0B0032A51A /* Place.swift */; };
 		49DAE2632AADDD460032A51A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAE2622AADDD460032A51A /* PlaceModel.swift */; };
@@ -113,6 +114,7 @@
 		49A6DC3329DC9EF900916F7C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		49A6DC3529DCAAC000916F7C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		49A6DC3729DCB06200916F7C /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		49B648472ADB112F0036491D /* AsyncImageHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageHack.swift; sourceTree = "<group>"; };
 		49DAE25E2AADDA700032A51A /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		49DAE2602AADDB0B0032A51A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		49DAE2622AADDD460032A51A /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				493D206C29F4957000619741 /* SUImagePickerView.swift */,
 				493D207029F4A2B500619741 /* ImagePickerView.swift */,
 				490C063B2A82CFD10050157F /* LocationDetailView.swift */,
+				49B648472ADB112F0036491D /* AsyncImageHack.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				49DAE2632AADDD460032A51A /* PlaceModel.swift in Sources */,
 				49DAE2662AADE4650032A51A /* CardViewPlace.swift in Sources */,
 				49E326D12AC7C95400194930 /* SharePlaceRequest.swift in Sources */,
+				49B648482ADB112F0036491D /* AsyncImageHack.swift in Sources */,
 				49E326D72AC833C000194930 /* SearchRequest.swift in Sources */,
 				49A5D6C92AC93F8700965921 /* ShareWithMeRequest.swift in Sources */,
 				491E2FA929D203BA0063AD9E /* ApplicationUtility.swift in Sources */,
