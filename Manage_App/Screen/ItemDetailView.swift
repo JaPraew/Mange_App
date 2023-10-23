@@ -1,9 +1,7 @@
 //
 //  ItemDetailView.swift
 //  Manage_App
-//
-//  Created by Pare on 24/9/2566 BE.
-//
+
 
 import SwiftUI
 
@@ -22,6 +20,11 @@ struct ItemDetailView: View {
     @State var newTitle = ""
     @State var newDescription = ""
     
+    @State private var selectedOption = "Move"
+    @State private var isPickerVisible = false
+        
+    let options = ["room 1", "room 2", "room 3"]
+        
     private func updateItem(imageBase64: String) async {
         
         do {
@@ -34,6 +37,13 @@ struct ItemDetailView: View {
             try await model.updateItem(itemRequest: ItemRequest(nameItem: newTitle, imagebase64: imageBase64, imagename: newTitle, descriptionItem: newDescription, idlocation: itemDetail.idlocation ?? "", owner: itemDetail.owner ?? ""), itemID: itemDetail._id)
             
             presentationMode.wrappedValue.dismiss()
+        } catch {
+            print(error)
+        }
+    }
+    private func deleteItem(itemID: String) async {
+        do {
+            try await model.deleteItem(itemID: itemID)
         } catch {
             print(error)
         }
@@ -65,21 +75,22 @@ struct ItemDetailView: View {
                         } else {
                             
                             AsyncImage(url: URL(string: itemDetail.imageitem ?? "" )) { image in
-                            image
-                                .resizable() // Apply the `resizable()` modifier here
-                                .frame(width: 300, height: 300)
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(.black)
-                                .padding(.top, 60)
-                                .padding(.bottom, 60)
-                        } placeholder: {
-                            ProgressView()
-                        }.cornerRadius(10).background(Color.white)
+                                image
+                                    .resizable() // Apply the `resizable()` modifier here
+                                    .frame(width: 300, height: 300)
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.black)
+                                    .padding(.top, 60)
+                                    .padding(.bottom, 60)
+                            } placeholder: {
+                                ProgressView()
+                            }.cornerRadius(10).background(Color.white)
                         }
                     }
                 }
                 
                 HStack {
+                    
                     if isEdited {
                         Button {
                             shouldPresentActionSheet = true
@@ -108,18 +119,33 @@ struct ItemDetailView: View {
                 
             }
             VStack (spacing: 20) {
+                
                 if !isEdited {
                     Text(itemDetail.nameItem ?? "")
                         .font(.title)
+                        .foregroundColor(.black)
                     Text(itemDetail.descriptionItem ?? "")
                         .font(.subheadline)
-                } else {
-                    TextField(itemDetail.nameItem ?? "", text: $newTitle)
-                        .font(.title)
-                        .multilineTextAlignment(.center)
-                    TextField(itemDetail.descriptionItem ?? "", text: $newDescription)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
+                }
+                else {
+                    Section {
+                        HStack{
+                            //  Text("Item")
+                            TextField(itemDetail.nameItem ?? "", text: $newTitle)
+                                .font(.title)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.center)
+                        }
+                    }.background(Color("gray1"))
+                    Section {
+                        // Text("Note")
+                        TextField(itemDetail.descriptionItem ?? "", text: $newDescription)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                    }.background(Color("gray1"))
+                    
                 }
             }
             HStack {
@@ -149,19 +175,45 @@ struct ItemDetailView: View {
                     if !isEdited {
                         Image(systemName: "pencil")
                     }else {
-                        
                         Image(systemName: "checkmark.circle")
                     }
                 }
                 Spacer()
-            }.padding(.top, 20)
+            }
+            // ส่วนที่แก้ไข
+            HStack{
+                Button(action: {
+                    self.isPickerVisible.toggle()
+                }) {
+                    Text("Move")
+                        .font(.headline)
+                        .padding()
+                    Image(systemName: "rectangle.portrait.and.arrow.forward.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                                
+                }
+                
+            }
+                        .padding(.top, 20)
+            if isPickerVisible {
+                Picker("Select an Option", selection: $selectedOption) {
+                    ForEach(options, id: \.self) { option in
+                        Text(option).tag(option)
+                    }
+                }.labelsHidden()
+            }
+
             Spacer()
+            
         }
+        
     }
+    
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView(itemDetail: Item(_id: "", imageitem: "https://i.pinimg.com/originals/68/e9/c1/68e9c1c903802ab1a09adf1407936bc8.png"))
+        ItemDetailView(itemDetail: Item(_id: "", imageitem: ""))
     }
 }

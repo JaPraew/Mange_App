@@ -8,7 +8,7 @@ struct PlaceAddView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject private var model: PlaceModel
     
-    @State private var image: Image? = Image("roomempty")
+    @State private var image: Image? = Image("room")
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionSheet = false
     @State private var shouldPresentCamera = false

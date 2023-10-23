@@ -1,9 +1,6 @@
 //
 //  CustomTabBarView.swift
-//  Manage_App
-//
-//  Created by Pare on 10/4/2566 BE.
-//
+
 
 import SwiftUI
 
@@ -12,8 +9,7 @@ struct CustomTabBarView: View {
     let tabs: [TabBarItem]
     
     @Binding var selection: TabBarItem
-  //  @State var selection: TabBarItem = TabBarItem(iconName: "house", title: "Home", color: Color.red)
-    
+  
     var body: some View {
         tabBarVersion1
     }

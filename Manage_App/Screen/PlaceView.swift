@@ -53,7 +53,7 @@ struct PlaceView: View {
                         await populatePlace()
                     }
                     
-                    .navigationTitle("My Place")
+                    .navigationTitle("My Location")
                     .toolbarBackground(
                         Color("g2") ,
                         for: .navigationBar)
@@ -79,7 +79,7 @@ struct PlaceView: View {
                             }
                         }
                     }.sheet(isPresented: $showingSheet) {
-                        SheetView(placeID: self.$placeID ,namePlace: self.$namePlace).presentationDetents([.medium], selection: $settingsDetent)
+                        SheetView(placeID: self.$placeID ,namePlace: self.$namePlace).presentationDetents([.large], selection: $settingsDetent)
                     }}
             }
         }
@@ -124,7 +124,7 @@ struct SheetView: View {
         ZStack {
             ScrollView {
                 VStack {
-                    Text("share \(namePlace)").font(.largeTitle)
+                    Text("Share Place\(namePlace)").font(.largeTitle)
                     TextField("email", text: $email)
                         .font(.title)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -134,7 +134,7 @@ struct SheetView: View {
                                 email = ""
                                 inValid = ""
                             } else {
-                                inValid = "ไม่ถูก Format Email"
+                                inValid = "The email format is incorrect."
                             }
                         }.submitLabel(.done)
                     if inValid != "" {

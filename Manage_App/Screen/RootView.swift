@@ -1,9 +1,6 @@
 //
 //  RootView.swift
-//  Manage_App
-//
-//  Created by Pare on 1/3/2566 BE.
-//
+
 
 import SwiftUI
 

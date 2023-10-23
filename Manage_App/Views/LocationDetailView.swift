@@ -14,6 +14,7 @@ struct LocationDetailView: View {
     
     @State var isEditedPlace = false
     @State var namePlaceEdited = ""
+    @State private var showAlert = false
     
     private func populateItem(ownerId: String, locationID: String) async {
         do {
@@ -76,9 +77,7 @@ struct LocationDetailView: View {
                                        .frame(width: 150, height: 150)
                                        .aspectRatio(contentMode: .fit)
                                }
-  //                              placeholder: {
-//                                    ProgressView()
-//                                }
+
                             } else {
                                 image!
                                     .resizable() // Apply the `resizable()` modifier here
@@ -135,26 +134,26 @@ struct LocationDetailView: View {
                                                     .frame(width: 100, height: 80)
                                                     .cornerRadius(10)
                                             }
-//                                        placeholder: {
-//                                            ProgressView()
-//                                        }
+
                                             Text(item.nameItem ?? "")
+                                                .foregroundColor(.black)
                                                 .bold()
                                                 .frame(maxWidth: .infinity)
                                             Spacer()
-                                            
                                             VStack {
                                                 Button {
-                                                    Task {
-                                                        await deleteItem(itemID: item._id)
-                                                    }
-                                                } label: {
-                                                    Image(systemName: "trash")
-                                                        .foregroundColor(.white)
-                                                        .scaledToFill().frame(maxWidth: 80 ,maxHeight: .infinity, alignment: .center)
-                                                }
-                                            }.background(.red)
-                                                .frame(maxWidth: 80,maxHeight: .infinity, alignment: .trailing)
+                                               Task {
+                                                   await deleteItem(itemID: item._id)
+                                             }
+                                            }
+                                            label: {
+                                             Image(systemName: "trash")
+                                               .foregroundColor(.white)
+                                               .scaledToFill().frame(maxWidth: 40 ,maxHeight: .infinity, alignment: .center)
+                                                  }
+                                              }
+                                                .background(.pink)
+                                                .frame(maxWidth: 40,maxHeight: .infinity, alignment: .trailing)
                                                 .border(Color.red, width: 1)
                                             
                                         }.frame(maxWidth: .infinity,alignment: .center)
@@ -179,6 +178,7 @@ struct LocationDetailView: View {
                             self.namePlaceEdited = place.namelocation
                         } label: {
                             Image(systemName: "xmark.circle")
+                                .foregroundColor(.red)
                         }
                     } else {
                         Button {
@@ -187,6 +187,7 @@ struct LocationDetailView: View {
                             }
                         } label: {
                             Image(systemName: "trash")
+                                .foregroundColor(.red)
                         }
                     }
                     Button {
@@ -202,8 +203,10 @@ struct LocationDetailView: View {
                     } label: {
                         if !isEditedPlace {
                             Image(systemName: "highlighter")
+                            
                         } else {
                             Image(systemName: "checkmark.circle")
+                                .foregroundColor(.green)
                         }
                     }
                 }

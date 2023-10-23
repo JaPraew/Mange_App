@@ -1,9 +1,4 @@
-//
-//  String+Extension.swift
-//  HomeManagement
-//
-//  Created by Pare on 5/10/2566 BE.
-//
+
 
 import Foundation
 

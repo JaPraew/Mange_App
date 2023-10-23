@@ -1,9 +1,7 @@
 //
 //  TabBarItem.swift
 //  Manage_App
-//
-//  Created by Pare on 11/4/2566 BE.
-//
+
 import SwiftUI
 
 enum TabBarItem: Hashable {

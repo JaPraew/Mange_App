@@ -1,9 +1,3 @@
-//
-//  AsyncImageHack.swift
-//  HomeManagement
-//
-//  Created by Pare on 15/10/2566 BE.
-//
 
 import SwiftUI
 struct AsyncImageHack<Content> : View where Content : View {

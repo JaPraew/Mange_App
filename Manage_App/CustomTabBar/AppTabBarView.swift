@@ -1,9 +1,7 @@
 //
 //  AppTabBarView.swift
 //  Manage_App
-//
-//  Created by Pare on 10/4/2566 BE.
-//
+
 
 import SwiftUI
 

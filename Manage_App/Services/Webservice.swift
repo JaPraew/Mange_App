@@ -57,10 +57,10 @@ class Webservice {
         guard let url = URL(string: "\(ConstantData.baseUrl)/api/location/create") else {
             throw NetworkError.badUrl
         }
-        
+        //เตรียมก่อนส่ง api
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")//ส่งแบบ json
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpBody = try JSONEncoder().encode(placeRequest)
         

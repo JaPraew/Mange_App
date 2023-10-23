@@ -1,9 +1,3 @@
-//
-//  ItemView.swift
-//  Manage_App
-//
-//  Created by Pare on 1/3/2566 BE.
-//
 
 import SwiftUI
 
@@ -15,7 +9,7 @@ struct ItemView: View {
     @EnvironmentObject private var model: PlaceModel
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var image: Image? = Image("roomempty")
+    @State private var image: Image? = Image("room")
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false

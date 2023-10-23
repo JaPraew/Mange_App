@@ -25,7 +25,7 @@
 		492A174129DD53460099F131 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A174029DD53460099F131 /* SettingsView.swift */; };
 		492A174329DDA0C50099F131 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A174229DDA0C50099F131 /* RootView.swift */; };
 		492A174529DDA66C0099F131 /* GoogleSignInWithHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A174429DDA66C0099F131 /* GoogleSignInWithHelper.swift */; };
-		4936D08129F05BDB0041676B /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936D08029F05BDB0041676B /* ItemView.swift */; };
+		4936D08129F05BDB0041676B /* ItemAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936D08029F05BDB0041676B /* ItemAddView.swift */; };
 		493D206D29F4957000619741 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D206C29F4957000619741 /* SUImagePickerView.swift */; };
 		493D207129F4A2B500619741 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D207029F4A2B500619741 /* ImagePickerView.swift */; };
 		4973B62529EF4F0900CEEE41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973B62429EF4F0900CEEE41 /* ImagePicker.swift */; };
@@ -99,7 +99,7 @@
 		492A174029DD53460099F131 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		492A174229DDA0C50099F131 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		492A174429DDA66C0099F131 /* GoogleSignInWithHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInWithHelper.swift; sourceTree = "<group>"; };
-		4936D08029F05BDB0041676B /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		4936D08029F05BDB0041676B /* ItemAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddView.swift; sourceTree = "<group>"; };
 		493D206C29F4957000619741 /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		493D207029F4A2B500619741 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		4973B62429EF4F0900CEEE41 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -247,7 +247,6 @@
 				4973B62429EF4F0900CEEE41 /* ImagePicker.swift */,
 				493D206C29F4957000619741 /* SUImagePickerView.swift */,
 				493D207029F4A2B500619741 /* ImagePickerView.swift */,
-				490C063B2A82CFD10050157F /* LocationDetailView.swift */,
 				49B648472ADB112F0036491D /* AsyncImageHack.swift */,
 			);
 			path = components;
@@ -261,7 +260,7 @@
 				492A174029DD53460099F131 /* SettingsView.swift */,
 				492A174229DDA0C50099F131 /* RootView.swift */,
 				498BBE9929EB48950077A849 /* SearchView.swift */,
-				4936D08029F05BDB0041676B /* ItemView.swift */,
+				4936D08029F05BDB0041676B /* ItemAddView.swift */,
 				49EC697C29F5D80F001E2D4E /* PlaceAddView.swift */,
 				490C06372A82CC4D0050157F /* PlaceView.swift */,
 				490C063D2A82D8BE0050157F /* Sharewithme.swift */,
@@ -311,6 +310,7 @@
 		49DAE2642AADE44C0032A51A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				490C063B2A82CFD10050157F /* LocationDetailView.swift */,
 				49DAE2652AADE4650032A51A /* CardViewPlace.swift */,
 				49E326C82AB6044F00194930 /* LoadingView.swift */,
 			);
@@ -473,7 +473,7 @@
 				498EC88F29E3D97200958F1E /* AppTabBarView.swift in Sources */,
 				49DAE2612AADDB0B0032A51A /* Place.swift in Sources */,
 				49E326C42AB588B900194930 /* PlaceRequest.swift in Sources */,
-				4936D08129F05BDB0041676B /* ItemView.swift in Sources */,
+				4936D08129F05BDB0041676B /* ItemAddView.swift in Sources */,
 				493D206D29F4957000619741 /* SUImagePickerView.swift in Sources */,
 				49A6DC3429DC9EF900916F7C /* AuthenticationView.swift in Sources */,
 				4973B62529EF4F0900CEEE41 /* ImagePicker.swift in Sources */,

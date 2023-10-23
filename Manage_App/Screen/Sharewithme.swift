@@ -1,9 +1,7 @@
 //
 //  Sharewithme.swift
 //  Manage_App
-//
-//  Created by Pare on 9/8/2566 BE.
-//
+
 
 import SwiftUI
 

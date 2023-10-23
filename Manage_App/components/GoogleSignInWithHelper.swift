@@ -1,9 +1,7 @@
 //
 //  File.swift
 //  Manage_App
-//
-//  Created by Pare on 5/4/2566 BE.
-//
+
 
 import Foundation
 import GoogleSignIn

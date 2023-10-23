@@ -1,9 +1,6 @@
 //
 //  SettingsView.swift
 //  Manage_App
-//
-//  Created by Pare on 5/4/2566 BE.
-//
 
 import SwiftUI
 
@@ -31,17 +28,10 @@ struct SettingsView: View {
     @Binding var showSignInView: Bool
     
     var body: some View {
-       
-        
         VStack{
-            
             Text("Setting")
             .font(.title2)
             List{
-              
-                
-            
-           
                 Button("Log out"){
                     Task{
                         do{
@@ -54,13 +44,10 @@ struct SettingsView: View {
                         }
                     }
                 }
-                
-                
             }
             
         }
-      //  .navigationBarTitle(Text("Setting"))
-      // .navigationTitle("Setting")
+      
         .onAppear{
             viewModel.loadAuthProviders()
         }

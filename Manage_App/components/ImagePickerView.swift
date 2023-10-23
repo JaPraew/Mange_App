@@ -1,9 +1,5 @@
 //
 //  ImagePickerView.swift
-//  Manage_App
-//
-//  Created by Pare on 23/4/2566 BE.
-//
 
 import Foundation
 import SwiftUI
